@@ -30,7 +30,9 @@ RUN apt-get -y install libcurl4-openssl-dev libelf-dev libdw-dev binutils-dev li
 RUN apt-get -y install python3
 RUN cargo kcov --print-install-kcov-sh | sh
 
-# Installing python3.6 & pytest.
+# Installing python3.6, pytest & numpy.
 RUN apt-get -y install python3.6
 RUN apt-get -y install python3-pip
-RUN pip3 install pytest
+RUN pip3 install cython pytest
+# Building numpy requires Cython to be completely installed.
+RUN pip3 install numpy
