@@ -36,3 +36,5 @@ RUN apt-get -y install python3-pip
 RUN pip3 install cython pytest
 # Building numpy requires Cython to be completely installed.
 RUN pip3 install numpy
+# Get detailed diffs for failing tests.
+RUN pip3 install pytest-diff
